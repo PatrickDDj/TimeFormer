@@ -1,448 +1,392 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>TimeFormer</title>
+<head>
+  <meta charset="utf-8" />
 
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-7ZNXPC3HP9"
-    ></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TimeFormer</title>
 
-    <script>
-      window.dataLayer = window.dataLayer || [];
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7ZNXPC3HP9"></script>
 
-      function gtag() {
-        dataLayer.push(arguments);
-      }
+  <script>
+    window.dataLayer = window.dataLayer || [];
 
-      gtag("js", new Date());
+    function gtag() {
+      dataLayer.push(arguments);
+    }
 
-      gtag("config", "G-7ZNXPC3HP9");
-    </script>
+    gtag("js", new Date());
 
-    <script>
-      window.dataLayer = window.dataLayer || [];
+    gtag("config", "G-7ZNXPC3HP9");
+  </script>
 
-      function gtag() {
-        dataLayer.push(arguments);
-      }
+  <script>
+    window.dataLayer = window.dataLayer || [];
 
-      gtag("js", new Date());
+    function gtag() {
+      dataLayer.push(arguments);
+    }
 
-      gtag("config", "G-PYVRSFMDRL");
-    </script>
+    gtag("js", new Date());
 
-    <link
-      href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./static/css/bulma.min.css" />
-    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css" />
-    <link rel="stylesheet" href="./static/css/bulma-slider.min.css" />
-    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css" />
-    <link rel="stylesheet" href="./static/css/app.css" />
-    <link rel="stylesheet" href="./static/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="./static/css/codemirror.min.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"
-    />
-    <link rel="stylesheet" href="./static/css/index.css" />
-    <link rel="stylesheet" href="./static/css/before_after.css" />
-    <link rel="icon" href="./static/images/cameraicon.svg" />
+    gtag("config", "G-PYVRSFMDRL");
+  </script>
 
-    <link rel="stylesheet" href="./static/css/bulma.min.css" />
-    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css" />
-    <link rel="stylesheet" href="./static/css/bulma-slider.min.css" />
-    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"
-    />
-    <link rel="stylesheet" href="./static/css/index.css" />
-    <link rel="stylesheet" href="./static/css/before_after.css" />
-    <link rel="icon" href="./static/images/cameraicon.svg" />
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet" />
+  <link rel="stylesheet" href="./static/css/bulma.min.css" />
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css" />
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css" />
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css" />
+  <link rel="stylesheet" href="./static/css/app.css" />
+  <link rel="stylesheet" href="./static/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="./static/css/codemirror.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
+  <link rel="stylesheet" href="./static/css/index.css" />
+  <link rel="stylesheet" href="./static/css/before_after.css" />
+  <link rel="icon" href="./static/images/cameraicon.svg" />
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
-    <script defer src="./static/js/fontawesome.all.min.js"></script>
-    <script src="./static/js/bulma-carousel.min.js"></script>
-    <script src="./static/js/bulma-slider.min.js"></script>
-    <script src="./static/js/index.js"></script>
-    <link rel="stylesheet" href="./static/css/magnify.css" />
-    <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
-    <script src="./static/js/jquery.magnify.js"></script>
+  <link rel="stylesheet" href="./static/css/bulma.min.css" />
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css" />
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css" />
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
+  <link rel="stylesheet" href="./static/css/index.css" />
+  <link rel="stylesheet" href="./static/css/before_after.css" />
+  <link rel="icon" href="./static/images/cameraicon.svg" />
 
-    <script src="static/js/video_comparison.js"></script>
-  </head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <link rel="stylesheet" href="./static/css/magnify.css" />
+  <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script src="./static/js/jquery.magnify.js"></script>
 
-  <body>
-    <style>
-      .render_wrapper {
-        position: relative;
-        height: 300px;
-      }
-      .render_wrapper_small {
-        position: relative;
-        height: 200px;
-      }
-      .render_div {
-        position: absolute;
-        top: 0;
-        left: 0;
-      }
+  <script src="static/js/video_comparison.js"></script>
+</head>
 
-      #interpolation-image-wrapper-car {
-        text-align: center;
-      }
-      #interpolation-image-wrapper-chair {
-        text-align: center;
-      }
-      .nested-columns {
-        margin-bottom: 0 !important;
-      }
-    </style>
+<body>
+  <style>
+    .render_wrapper {
+      position: relative;
+      height: 300px;
+    }
 
-    <style>
-      .before,
-      .after {
-        margin: 0;
-      }
+    .render_wrapper_small {
+      position: relative;
+      height: 200px;
+    }
 
-      .before figcaption,
-      .after figcaption {
-        background: #fff;
-        /*border: 1px solid #c0c0c0;*/
-        border-radius: 5px;
-        color: #2e3452;
-        opacity: 0.6;
-        padding: 5px;
-        position: absolute;
-        top: 90%;
-        transform: translateY(-50%);
-        line-height: 100%;
-      }
+    .render_div {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
 
-      .before figcaption {
-        left: 8px;
-      }
+    #interpolation-image-wrapper-car {
+      text-align: center;
+    }
 
-      .after figcaption {
-        right: 8px;
-      }
-    </style>
+    #interpolation-image-wrapper-chair {
+      text-align: center;
+    }
 
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/index.js"
-    ></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/styles.css"
-    />
+    .nested-columns {
+      margin-bottom: 0 !important;
+    }
+  </style>
 
-    <link
-      rel="stylesheet"
-      href="https://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css"
-    />
-    <!--使用Bootstrap的js插件，必须先调入jQuery-->
-    <script src="https://libs.baidu.com/jquery/1.9.0/jquery.min.js"></script>
+  <style>
+    .before,
+    .after {
+      margin: 0;
+    }
 
-    <!-- 包括所有bootstrap的js插件或者可以根据需要使用的js插件调用　-->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    .before figcaption,
+    .after figcaption {
+      background: #fff;
+      /*border: 1px solid #c0c0c0;*/
+      border-radius: 5px;
+      color: #2e3452;
+      opacity: 0.6;
+      padding: 5px;
+      position: absolute;
+      top: 90%;
+      transform: translateY(-50%);
+      line-height: 100%;
+    }
 
-    <section class="hero">
-      <div class="hero-body">
-        <div class="container is-max-desktop">
-          <div class="columns is-centered">
-            <div class="column has-text-centered">
-              <div class="container text-center">
-                <h1 class="display-1 ">
-                  TimeFormer: Capturing Temporal Relationships of <br />
-                  Deformable 3D Gaussians for Robust Reconstruction
-                </h1>
-              </div>
-              <!-- <br> -->
+    .before figcaption {
+      left: 8px;
+    }
 
-              <div class="is-size-3 publication-authors">
-                <span class="is-size-3 author-block">
-                  <a
-                    class="is-size-3 publication-authors"
-                    href="https://patrickddj.github.io/Home/"
-                    >Dadong Jiang</a
-                  ><sup>1,3</sup>,</span
-                >
-                <span class="is-size-3 author-block">
-                  <a
-                    class="is-size-3 publication-authors"
-                    href="https://zhihou7.github.io/"
-                    >Zhi Hou</a
-                  ><sup>2 *</sup>,</span
-                >
-                <span class="is-size-3 author-block">
-                  <a
-                    class="is-size-3 publication-authors"
-                    href="#"
-                    >Zhihui Ke</a
-                  ><sup>1</sup>,</span
-                >
-                 <span class="is-size-3 author-block">
-                  <a
-                    class="is-size-3 publication-authors"
-                    href="https://wi-sc.github.io/xianghui-yang/"
-                    >Xianghui Yang</a
-                  ><sup>3</sup>,
-                </span>
-                <span class="is-size-3 author-block">
-                  <a
-                    class="is-size-3 publication-authors"
-                    href="https://liaex.github.io/"
-                    >Xiaobo Zhou</a
-                  ><sup>1 *</sup>
-                </span>
-                
-               
+    .after figcaption {
+      right: 8px;
+    }
+  </style>
 
-                </span>
-                
-                <!-- <span class="author-block">
+  <script defer src="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/index.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/styles.css" />
+
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css" />
+  <!--使用Bootstrap的js插件，必须先调入jQuery-->
+  <script src="https://libs.baidu.com/jquery/1.9.0/jquery.min.js"></script>
+
+  <!-- 包括所有bootstrap的js插件或者可以根据需要使用的js插件调用　-->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <div class="container text-center">
+              <h1 class="display-1 ">
+                TimeFormer: Capturing Temporal Relationships of <br />
+                Deformable 3D Gaussians for Robust Reconstruction
+              </h1>
+            </div>
+            <!-- <br> -->
+
+            <div class="is-size-3 publication-authors">
+              <span class="is-size-3 author-block">
+                ICCV 2025
+              </span>
+            </div>
+
+            <div class="is-size-3 publication-authors">
+              <span class="is-size-3 author-block">
+                <a class="is-size-3 publication-authors" href="https://patrickddj.github.io/Home/">Dadong
+                  Jiang</a><sup>1,3</sup>,</span>
+              <span class="is-size-3 author-block">
+                <a class="is-size-3 publication-authors" href="https://zhihou7.github.io/">Zhi Hou</a><sup>2
+                  *</sup>,</span>
+              <span class="is-size-3 author-block">
+                <a class="is-size-3 publication-authors" href="#">Zhihui Ke</a><sup>1</sup>,</span>
+              <span class="is-size-3 author-block">
+                <a class="is-size-3 publication-authors" href="https://wi-sc.github.io/xianghui-yang/">Xianghui
+                  Yang</a><sup>3</sup>,
+              </span>
+              <span class="is-size-3 author-block">
+                <a class="is-size-3 publication-authors" href="https://liaex.github.io/">Xiaobo Zhou</a><sup>1 *</sup>
+              </span>
+
+
+
+              </span>
+
+              <!-- <span class="author-block">
                   <a
                     class="is-size-3 publication-authors"
                     href="#"
                     >Chunchao Guo</a
                   ><sup>3</sup>,</span
                 > -->
-              </div>
-              <div class="is-size-3 publication-authors">
-                <span class="is-size-3 author-block"
-                  ><sup>1</sup>Tianjin University
-                </span>
-                <span class="is-size-3 author-block"><sup>2</sup>Shanghai AI Lab </span>
-                <span class="is-size-3 author-block"><sup>3</sup>Tencent Hunyuan </span>
-                <!-- <span class="is-size-3 author-block"><sup>4</sup>Tencent AI Lab </span> -->
-              </div>
-
-              <div class="publication-links">
-                <span class="link-block">
-                  <a
-                    class="is-size-4 external-link button is-normal is-rounded is-dark"
-                    href="https://arxiv.org/abs/2411.11941"
-                  >
-                    <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                    </span>
-                    <span>arXiv</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a href="https://github.com/PatrickDDj/TimeFormer-Code" class="is-size-4 external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                        <svg class="svg-inline--fa fa-github fa-w-16" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" data-fa-i2svg=""><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg><!-- <i class="fab fa-github"></i> Font Awesome fontawesome.com -->
-                    </span>
-                    <span>Code</span>
-                  </a>
+            </div>
+            <div class="is-size-3 publication-authors">
+              <span class="is-size-3 author-block"><sup>1</sup>Tianjin University
               </span>
-              </div>
+              <span class="is-size-3 author-block"><sup>2</sup>Shanghai AI Lab </span>
+              <span class="is-size-3 author-block"><sup>3</sup>Tencent Hunyuan </span>
+              <!-- <span class="is-size-3 author-block"><sup>4</sup>Tencent AI Lab </span> -->
+            </div>
+
+            <div class="publication-links">
+              <span class="link-block">
+                <a class="is-size-4 external-link button is-normal is-rounded is-dark"
+                  href="https://arxiv.org/abs/2411.11941">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://github.com/PatrickDDj/TimeFormer-Code"
+                  class="is-size-4 external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <svg class="svg-inline--fa fa-github fa-w-16" aria-hidden="true" focusable="false" data-prefix="fab"
+                      data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"
+                      data-fa-i2svg="">
+                      <path fill="currentColor"
+                        d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z">
+                      </path>
+                    </svg><!-- <i class="fab fa-github"></i> Font Awesome fontawesome.com -->
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
             </div>
           </div>
         </div>
       </div>
-    </section>
-    <!-- <br /><br /> -->
+    </div>
+  </section>
+  <!-- <br /><br /> -->
 
-    <section class="hero">
+  <section class="hero">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-two-fifths">
+          <img-comparison-slider hover="hover" value="50">
+            <figure slot="first" class="before">
+              <img src="compare_rgb/banner/virg-peel-banana_ori_00010_box.png" width="230px" />
+              <figcaption>Before</figcaption>
+            </figure>
+            <figure slot="second" class="after">
+              <img src="compare_rgb/banner/virg-peel-banana_ours_00010_box.png" width="230px" />
+              <figcaption>After</figcaption>
+            </figure>
+          </img-comparison-slider>
+          <h4>4DGS + TimeFormer</h4>
+        </div>
+        <div class="column is-three-fifths">
+          <img-comparison-slider hover="hover" value="50">
+            <figure slot="first" class="before">
+              <img src="compare_rgb/nv3d/coffee_STGS/00010_box.png" />
+              <figcaption>Before</figcaption>
+            </figure>
+            <figure slot="second" class="after">
+              <img src="compare_rgb/nv3d/coffee_STGS_ours/00010_box.png" />
+              <figcaption>After</figcaption>
+            </figure>
+          </img-comparison-slider>
+          <h4>STGS + TimeFormer</h4>
+        </div>
+      </div>
+      <!-- <br /> -->
+      <div class="columns has-text-justified is-centered">
+        <div class="content">
+          <p>
+            TimeFormer improves reconstruction quality, especially on those
+            scenes with violent movement, extreme-shaped geometries, or
+            reflective surfaces.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br />
+  <br />
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="columns is-centered has-text-centered">
+        <h2 class="title is-1">Gaussians in the Canonical Space</h2>
+      </div>
+      <!-- <h2 class="title is-1">Gaussians in the Canonical Space</h2> -->
       <div class="container is-max-desktop">
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-two-fifths">
-            <img-comparison-slider hover="hover" value="50">
-              <figure slot="first" class="before">
-                <img
-                  src="compare_rgb/banner/virg-peel-banana_ori_00010_box.png"
-                  width="230px"
-                />
-                <figcaption>Before</figcaption>
-              </figure>
-              <figure slot="second" class="after">
-                <img
-                  src="compare_rgb/banner/virg-peel-banana_ours_00010_box.png"
-                  width="230px"
-                />
-                <figcaption>After</figcaption>
-              </figure>
-            </img-comparison-slider>
-            <h4>4DGS + TimeFormer</h4>
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item item-steve render_wrapper">
+            <div id="pc_002" class="render_div">
+              <div style="text-align: center; font-size: large" id="caption_pc_002"></div>
+            </div>
           </div>
-          <div class="column is-three-fifths">
-            <img-comparison-slider hover="hover" value="50">
-              <figure slot="first" class="before">
-                <img src="compare_rgb/nv3d/coffee_STGS/00010_box.png" />
-                <figcaption>Before</figcaption>
-              </figure>
-              <figure slot="second" class="after">
-                <img src="compare_rgb/nv3d/coffee_STGS_ours/00010_box.png" />
-                <figcaption>After</figcaption>
-              </figure>
-            </img-comparison-slider>
-            <h4>STGS + TimeFormer</h4>
+
+          <div class="item item-steve render_wrapper">
+            <div id="pc_003" class="render_div">
+              <div style="text-align: center; font-size: large" id="caption_pc_003"></div>
+            </div>
+          </div>
+
+          <div class="item item-steve render_wrapper">
+            <div id="pc_008" class="render_div">
+              <div style="text-align: center; font-size: large" id="caption_pc_008"></div>
+            </div>
+          </div>
+
+          <div class="item item-steve render_wrapper">
+            <div id="pc_005" class="render_div">
+              <div style="text-align: center; font-size: large" id="caption_pc_005"></div>
+            </div>
           </div>
         </div>
-        <!-- <br /> -->
+
+
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item item-steve render_wrapper">
+            <div id="pc_ours_002" class="render_div">
+              <div style="text-align: center; font-size: large" id="caption_pc_ours_002"></div>
+            </div>
+          </div>
+
+          <div class="item item-steve render_wrapper">
+            <div id="pc_ours_003" class="render_div">
+              <div style="text-align: center; font-size: large" id="caption_pc_ours_003"></div>
+            </div>
+          </div>
+
+          <div class="item item-steve render_wrapper">
+            <div id="pc_ours_008" class="render_div">
+              <div style="text-align: center; font-size: large" id="caption_pc_ours_008"></div>
+            </div>
+          </div>
+          <div class="item item-steve render_wrapper">
+            <div id="pc_ours_005" class="render_div">
+              <div style="text-align: center; font-size: large" id="caption_pc_ours_005"></div>
+            </div>
+          </div>
+
+
+        </div>
+
+        <br />
         <div class="columns has-text-justified is-centered">
           <div class="content">
             <p>
-              TimeFormer improves reconstruction quality, especially on those
-              scenes with violent movement, extreme-shaped geometries, or
-              reflective surfaces.
+              TimeFormer promotes a more efficient spatial distribution of
+              Gaussians in the canonical space.
             </p>
           </div>
         </div>
       </div>
-    </section>
-    <br />
-    <br />
+    </div>
+  </section>
 
-      <section class="hero">
-        <div class="hero-body">
-          <div class="columns is-centered has-text-centered">
-            <h2 class="title is-1">Gaussians in the Canonical Space</h2>
-          </div>
-          <!-- <h2 class="title is-1">Gaussians in the Canonical Space</h2> -->
-          <div class="container is-max-desktop">
-            <div id="results-carousel" class="carousel results-carousel">
-              <div class="item item-steve render_wrapper">
-                <div id="pc_002" class="render_div">
-                  <div
-                    style="text-align: center; font-size: large"
-                    id="caption_pc_002"
-                  ></div>
-                </div>
-              </div>
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <h2 class="title is-1">Abstract</h2>
+      </div>
 
-              <div class="item item-steve render_wrapper">
-                <div id="pc_003" class="render_div">
-                  <div
-                    style="text-align: center; font-size: large"
-                    id="caption_pc_003"
-                  ></div>
-                </div>
-              </div>
-
-              <div class="item item-steve render_wrapper">
-                <div id="pc_008" class="render_div">
-                  <div
-                    style="text-align: center; font-size: large"
-                    id="caption_pc_008"
-                  ></div>
-                </div>
-              </div>
-
-              <div class="item item-steve render_wrapper">
-                <div id="pc_005" class="render_div">
-                  <div
-                    style="text-align: center; font-size: large"
-                    id="caption_pc_005"
-                  ></div>
-                </div>
-              </div>
-            </div>
-            
-
-            <div id="results-carousel" class="carousel results-carousel">
-              <div class="item item-steve render_wrapper">
-                <div id="pc_ours_002" class="render_div">
-                  <div
-                    style="text-align: center; font-size: large"
-                    id="caption_pc_ours_002"
-                  ></div>
-                </div>
-              </div>
-
-              <div class="item item-steve render_wrapper">
-                <div id="pc_ours_003" class="render_div">
-                  <div
-                    style="text-align: center; font-size: large"
-                    id="caption_pc_ours_003"
-                  ></div>
-                </div>
-              </div>
-
-              <div class="item item-steve render_wrapper">
-                <div id="pc_ours_008" class="render_div">
-                  <div
-                    style="text-align: center; font-size: large"
-                    id="caption_pc_ours_008"
-                  ></div>
-                </div>
-              </div>
-              <div class="item item-steve render_wrapper">
-                <div id="pc_ours_005" class="render_div">
-                  <div
-                    style="text-align: center; font-size: large"
-                    id="caption_pc_ours_005"
-                  ></div>
-                </div>
-              </div>
-
-              
-            </div>
-
-            <br />
-            <div class="columns has-text-justified is-centered">
-              <div class="content">
-                <p>
-                  TimeFormer promotes a more efficient spatial distribution of
-                  Gaussians in the canonical space.
-                </p>
-              </div>
-            </div>
-          </div>
+      <div class="columns has-text-justified">
+        <div class="content">
+          <p>
+            Dynamic scene reconstruction is a long-term challenge in 3D
+            vision. Recent methods extend 3D Gaussian Splatting to dynamic
+            scenes via additional deformation fields and apply explicit
+            constraints like motion flow to guide the deformation. However,
+            they learn motion changes from individual timestamps
+            independently, making it challenging to reconstruct complex
+            scenes, particularly when dealing with violent movement,
+            extreme-shaped geometries, or reflective surfaces. To address the
+            above issue, we design a plug-and-play module called TimeFormer to
+            enable existing deformable 3D Gaussians reconstruction methods
+            with the ability to implicitly model motion patterns from a
+            learning perspective. Specifically, TimeFormer includes a
+            Cross-Temporal Transformer Encoder, which adaptively learns the
+            temporal relationships of deformable 3D Gaussians. Furthermore, we
+            propose a two-stream optimization strategy that transfers the
+            motion knowledge learned from TimeFormer to the base stream during
+            the training phase. This allows us to remove TimeFormer during
+            inference, thereby preserving the original rendering speed.
+            Extensive experiments in the multi-view and monocular dynamic
+            scenes validate qualitative and quantitative improvement brought
+            by TimeFormer.
+          </p>
         </div>
-      </section>
+      </div>
+      <hr />
 
-    <section class="section hero is-light">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered has-text-centered">
-          <h2 class="title is-1">Abstract</h2>
-        </div>
-
-        <div class="columns has-text-justified">
-          <div class="content">
-            <p>
-              Dynamic scene reconstruction is a long-term challenge in 3D
-              vision. Recent methods extend 3D Gaussian Splatting to dynamic
-              scenes via additional deformation fields and apply explicit
-              constraints like motion flow to guide the deformation. However,
-              they learn motion changes from individual timestamps
-              independently, making it challenging to reconstruct complex
-              scenes, particularly when dealing with violent movement,
-              extreme-shaped geometries, or reflective surfaces. To address the
-              above issue, we design a plug-and-play module called TimeFormer to
-              enable existing deformable 3D Gaussians reconstruction methods
-              with the ability to implicitly model motion patterns from a
-              learning perspective. Specifically, TimeFormer includes a
-              Cross-Temporal Transformer Encoder, which adaptively learns the
-              temporal relationships of deformable 3D Gaussians. Furthermore, we
-              propose a two-stream optimization strategy that transfers the
-              motion knowledge learned from TimeFormer to the base stream during
-              the training phase. This allows us to remove TimeFormer during
-              inference, thereby preserving the original rendering speed.
-              Extensive experiments in the multi-view and monocular dynamic
-              scenes validate qualitative and quantitative improvement brought
-              by TimeFormer.
-            </p>
-          </div>
-        </div>
-        <hr />
-
-        <!-- <div class="columns is-centered has-text-centered">
+      <!-- <div class="columns is-centered has-text-centered">
           <img src="images/timeformer.png" width="100%" />
         </div> -->
 
-        <!-- <div class="columns is-centered">
+      <!-- <div class="columns is-centered">
           <div class="content">
             <h5 align="center">
               The pipeline of 4D Gaussian reconstruction with the proposed
@@ -451,36 +395,36 @@
           </div>
         </div> -->
 
-        <!-- <div class="columns">
+      <!-- <div class="columns">
           <div class="content">
             <p>
               The Framework of Deformable 3D Gaussians Reconstruction with TimeFormer. Existing deformable 3D Gaussians framework usually includes the canonical space and the deformation field (first row), we incorporate TimeFormer to capture cross-time relationships and explore motion patterns implicitly (second row). We share weights of two deformation fields to transfer the learned motion knowledge. This allows us to exclude this Auxiliary Training Module during inference.
             </p>
           </div>
         </div> -->
+    </div>
+  </section>
+
+  <br /><br />
+
+  <section class="section hero">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <h2 class="title is-1">Framework</h2>
       </div>
-    </section>
 
-    <br /><br />
-
-    <section class="section hero">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered has-text-centered">
-          <h2 class="title is-1">Framework</h2>
-        </div>
-
-        <!-- <div class="columns">
+      <!-- <div class="columns">
           <div class="content">
             <p>Dynamic scene reconstruction is a long-term challenge in 3D vision. Recent methods extend 3D Gaussian Splatting to dynamic scenes via additional deformation fields and apply explicit constraints like motion flow to guide the deformation. However, they learn motion changes from individual timestamps independently, making it challenging to reconstruct complex scenes, particularly when dealing with violent movement, extreme-shaped geometries, or reflective surfaces. To address the above issue, we design a plug-and-play module called TimeFormer to enable existing deformable 3D Gaussians reconstruction methods with the ability to implicitly model motion patterns from a learning perspective. Specifically, TimeFormer includes a Cross-Temporal Transformer Encoder, which adaptively learns the temporal relationships of deformable 3D Gaussians. Furthermore, we propose a two-stream optimization strategy that transfers the motion knowledge learned from TimeFormer to the base stream during the training phase. This allows us to remove TimeFormer during inference, thereby preserving the original rendering speed. Extensive experiments in the multi-view and monocular dynamic scenes validate qualitative and quantitative improvement brought by TimeFormer.</p>
           </div>
         </div>
         <hr /> -->
 
-        <div class="columns is-centered has-text-centered">
-          <img src="images/timeformer.png" width="100%" />
-        </div>
+      <div class="columns is-centered has-text-centered">
+        <img src="images/timeformer.png" width="100%" />
+      </div>
 
-        <!-- <div class="columns is-centered">
+      <!-- <div class="columns is-centered">
           <div class="content">
             <h5 align="center">
               The pipeline of 4D Gaussian reconstruction with the proposed
@@ -489,135 +433,117 @@
           </div>
         </div> -->
 
-        <div class="columns has-text-justified">
-          <div class="content">
-            <p>
-              The Framework of Deformable 3D Gaussians Reconstruction with
-              TimeFormer. Existing deformable 3D Gaussians framework usually
-              includes the canonical space and the deformation field (first
-              row), we incorporate TimeFormer to capture cross-time
-              relationships and explore motion patterns implicitly (second row).
-              We share weights of two deformation fields to transfer the learned
-              motion knowledge. This allows us to exclude this Auxiliary
-              Training Module during inference.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <br /><br />
-
-    <section>
-      <div class="container is-max-desktop">
-        <div class="columns is-centered has-text-centered">
-          <h2 class="title is-2">4DGS + TimeFormer on NV3D Dataset</h2>
-        </div>
-        <div class="columns is-centered has-text-centered">
-          <table width="100%">
-            <tbody>
-              <tr>
-                <td align="left" valign="top" width="50%">
-                  <video
-                    class="video"
-                    preload="auto"
-                    id="water8"
-                    loop=""
-                    playsinline=""
-                    autoplay=""
-                    muted=""
-                    src="video/flame_salmon_4DGS.mp4"
-                    onplay="resizeAndPlayDualWhenReady(this, 'water9')"
-                    style="height: 0px"
-                  ></video>
-
-                  <canvas class="videoMerge" id="water8Merge"></canvas>
-                </td>
-                <td align="left" valign="top" width="50%">
-                  <video
-                    class="video"
-                    preload="auto"
-                    id="water9"
-                    loop=""
-                    playsinline=""
-                    autoplay=""
-                    muted=""
-                    src="video/flame_salmon_ours.mp4"
-                    style="height: 0px"
-                  ></video>
-                  <canvas class="videoMerge" id="water9Merge"></canvas>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div class="columns is-centered has-text-centered">
-          <table width="100%">
-            <tbody>
-              <tr>
-                <td>
-                  <h5>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;4DGS</h5>
-                </td>
-                <td>
-                  <h5>
-                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;4DGS +
-                    TimeFormer
-                  </h5>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div class="columns is-centered has-text-centered"></div>
-        <div class="columns is-centered has-text-centered">
+      <div class="columns has-text-justified">
+        <div class="content">
           <p>
-            We eliminate the incorrect motion (flickering red area) caused by
-            the specular reflection on <u>the right window</u>, and remove
-            <u>artifacts on the background</u>.
-            <!-- <br> -->
-            <!-- Since we normalize each motion map to the heatmap independently, some flickering may occur. -->
+            The Framework of Deformable 3D Gaussians Reconstruction with
+            TimeFormer. Existing deformable 3D Gaussians framework usually
+            includes the canonical space and the deformation field (first
+            row), we incorporate TimeFormer to capture cross-time
+            relationships and explore motion patterns implicitly (second row).
+            We share weights of two deformation fields to transfer the learned
+            motion knowledge. This allows us to exclude this Auxiliary
+            Training Module during inference.
           </p>
         </div>
       </div>
-    </section>
-    <br />
-    <hr />
-    <br />
+    </div>
+  </section>
 
-    <script>
-      function pad(num, size = 5) {
-        num = num.toString();
-        while (num.length < size) num = "0" + num;
-        return num;
-      }
-    </script>
+  <br /><br />
 
-    <script>
-      function get_class_width(num) {
-        if (num === 2) return "is-half";
-        if (num === 3) return "is-one-third";
-        if (num === 4) return "is-one-quarter";
-        if (num === 5) return "is-one-fifth";
-        if (num === 6) return "is-one-third";
-        return "";
-      }
-    </script>
+  <section>
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <h2 class="title is-2">4DGS + TimeFormer on NV3D Dataset</h2>
+      </div>
+      <div class="columns is-centered has-text-centered">
+        <table width="100%">
+          <tbody>
+            <tr>
+              <td align="left" valign="top" width="50%">
+                <video class="video" preload="auto" id="water8" loop="" playsinline="" autoplay="" muted=""
+                  src="video/flame_salmon_4DGS.mp4" onplay="resizeAndPlayDualWhenReady(this, 'water9')"
+                  style="height: 0px"></video>
 
-    <!--4DGS HyperNeRF-->
-    <script>
-      cases = ["broom2", "cut-lemon1", "chickchicken"];
-      frames = {
-        broom2: [22, 16],
-        // 'virg-peel-banana': [4, 10, 35, 91],
-        "cut-lemon1": [52, 145, 376],
-        chickchicken: [21, 66],
-        // 'hand1-dense-v2': [0, 16, 28, 40],
-        // 'cut-lemon1': [0, 20, 40, 56, 80, 100],
-      };
-      document.write(
-        `<section class="section">
+                <canvas class="videoMerge" id="water8Merge"></canvas>
+              </td>
+              <td align="left" valign="top" width="50%">
+                <video class="video" preload="auto" id="water9" loop="" playsinline="" autoplay="" muted=""
+                  src="video/flame_salmon_ours.mp4" style="height: 0px"></video>
+                <canvas class="videoMerge" id="water9Merge"></canvas>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="columns is-centered has-text-centered">
+        <table width="100%">
+          <tbody>
+            <tr>
+              <td>
+                <h5>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;4DGS</h5>
+              </td>
+              <td>
+                <h5>
+                  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;4DGS +
+                  TimeFormer
+                </h5>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="columns is-centered has-text-centered"></div>
+      <div class="columns is-centered has-text-centered">
+        <p>
+          We eliminate the incorrect motion (flickering red area) caused by
+          the specular reflection on <u>the right window</u>, and remove
+          <u>artifacts on the background</u>.
+          <!-- <br> -->
+          <!-- Since we normalize each motion map to the heatmap independently, some flickering may occur. -->
+        </p>
+      </div>
+    </div>
+  </section>
+  <br />
+  <hr />
+  <br />
+
+  <script>
+    function pad(num, size = 5) {
+      num = num.toString();
+      while (num.length < size) num = "0" + num;
+      return num;
+    }
+  </script>
+
+  <script>
+    function get_class_width(num) {
+      if (num === 2) return "is-half";
+      if (num === 3) return "is-one-third";
+      if (num === 4) return "is-one-quarter";
+      if (num === 5) return "is-one-fifth";
+      if (num === 6) return "is-one-third";
+      return "";
+    }
+  </script>
+
+  <!--4DGS HyperNeRF-->
+  <script>
+    cases = ["broom2", "cut-lemon1", "chickchicken"];
+    frames = {
+      broom2: [22, 16],
+      // 'virg-peel-banana': [4, 10, 35, 91],
+      "cut-lemon1": [52, 145, 376],
+      chickchicken: [21, 66],
+      // 'hand1-dense-v2': [0, 16, 28, 40],
+      // 'cut-lemon1': [0, 20, 40, 56, 80, 100],
+    };
+    document.write(
+      `<section class="section">
             <div class="container is-max-desktop">
                 <div class="columns is-centered has-text-centered">
                     <h2 class="title is-2">4DGS + TimeFormer on  HyperNeRF Dataset</h2>
@@ -626,89 +552,89 @@
                     <h2 class="title is-2"> <a href="index_4DGS_hypernerf.html" style="color:royalblue;">======> Click to See More Cases Here ======></a></h2>
                 </div>
 `
-      );
+    );
 
-      for (var c = 0; c < cases.length; c++) {
-        dataset = cases[c];
-        class_width = get_class_width(frames[dataset].length);
-        if (dataset === "cut-lemon1") {
-          row = "";
-          for (var i = 0; i < frames[dataset].length; i++) {
-            row += '<div class="columns is-centered has-text-centered">';
-            row += `<div class="column is-half">
+    for (var c = 0; c < cases.length; c++) {
+      dataset = cases[c];
+      class_width = get_class_width(frames[dataset].length);
+      if (dataset === "cut-lemon1") {
+        row = "";
+        for (var i = 0; i < frames[dataset].length; i++) {
+          row += '<div class="columns is-centered has-text-centered">';
+          row += `<div class="column is-half">
                     <img-comparison-slider hover="hover" value="50">
                           <figure slot="first" class="before">
                             <img src="compare_rgb/hypernerf/${dataset}_ori/${pad(
-              frames[dataset][i]
-            )}.png" >
+            frames[dataset][i]
+          )}.png" >
                             <figcaption>Before</figcaption>
                           </figure>
                           <figure slot="second" class="after">
                             <img src="compare_rgb/hypernerf/${dataset}_ours/${pad(
-              frames[dataset][i]
-            )}.png" >
+            frames[dataset][i]
+          )}.png" >
                             <figcaption>After</figcaption>
                           </figure>
                         </img-comparison-slider>
                 </div>`;
-            row += `<div class="column is-half">
+          row += `<div class="column is-half">
                     <img-comparison-slider hover="hover" value="50">
                           <figure slot="first" class="before">
                             <img src="compare_rgb/hypernerf/${dataset}_ori_motion/${pad(
-              frames[dataset][i]
-            )}_heatmap.png">
+            frames[dataset][i]
+          )}_heatmap.png">
                             <figcaption>Before</figcaption>
                           </figure>
                           <figure slot="second" class="after">
                             <img src="compare_rgb/hypernerf/${dataset}_ours_motion/${pad(
-              frames[dataset][i]
-            )}_heatmap.png">
+            frames[dataset][i]
+          )}_heatmap.png">
                             <figcaption>After</figcaption>
                           </figure>
                         </img-comparison-slider>
                 </div>`;
-            row += "</div>";
-          }
-        } else {
-          row = '<div class="columns is-centered has-text-centered">';
-          for (var i = 0; i < frames[dataset].length; i++) {
-            row += `<div class="column is-one-quarter">
-                    <img-comparison-slider hover="hover" value="50">
-                          <figure slot="first" class="before">
-                            <img src="compare_rgb/hypernerf/${dataset}_ori/${pad(
-              frames[dataset][i]
-            )}.png">
-                            <figcaption>Before</figcaption>
-                          </figure>
-                          <figure slot="second" class="after">
-                            <img src="compare_rgb/hypernerf/${dataset}_ours/${pad(
-              frames[dataset][i]
-            )}.png">
-                            <figcaption>After</figcaption>
-                          </figure>
-                        </img-comparison-slider>
-                </div>`;
-            row += `<div class="column is-one-quarter">
-                    <img-comparison-slider hover="hover" value="50">
-                          <figure slot="first" class="before">
-                            <img src="compare_rgb/hypernerf/${dataset}_ori_motion/${pad(
-              frames[dataset][i]
-            )}_heatmap.png">
-                            <figcaption>Before</figcaption>
-                          </figure>
-                          <figure slot="second" class="after">
-                            <img src="compare_rgb/hypernerf/${dataset}_ours_motion/${pad(
-              frames[dataset][i]
-            )}_heatmap.png">
-                            <figcaption>After</figcaption>
-                          </figure>
-                        </img-comparison-slider>
-                </div>`;
-          }
           row += "</div>";
         }
+      } else {
+        row = '<div class="columns is-centered has-text-centered">';
+        for (var i = 0; i < frames[dataset].length; i++) {
+          row += `<div class="column is-one-quarter">
+                    <img-comparison-slider hover="hover" value="50">
+                          <figure slot="first" class="before">
+                            <img src="compare_rgb/hypernerf/${dataset}_ori/${pad(
+            frames[dataset][i]
+          )}.png">
+                            <figcaption>Before</figcaption>
+                          </figure>
+                          <figure slot="second" class="after">
+                            <img src="compare_rgb/hypernerf/${dataset}_ours/${pad(
+            frames[dataset][i]
+          )}.png">
+                            <figcaption>After</figcaption>
+                          </figure>
+                        </img-comparison-slider>
+                </div>`;
+          row += `<div class="column is-one-quarter">
+                    <img-comparison-slider hover="hover" value="50">
+                          <figure slot="first" class="before">
+                            <img src="compare_rgb/hypernerf/${dataset}_ori_motion/${pad(
+            frames[dataset][i]
+          )}_heatmap.png">
+                            <figcaption>Before</figcaption>
+                          </figure>
+                          <figure slot="second" class="after">
+                            <img src="compare_rgb/hypernerf/${dataset}_ours_motion/${pad(
+            frames[dataset][i]
+          )}_heatmap.png">
+                            <figcaption>After</figcaption>
+                          </figure>
+                        </img-comparison-slider>
+                </div>`;
+        }
+        row += "</div>";
+      }
 
-        document.write(`
+      document.write(`
 
 
 
@@ -721,25 +647,25 @@
         
         <br>
         `);
-      }
+    }
 
-      document.write(
-        `    </div>
+    document.write(
+      `    </div>
 </section>`
-      );
-    </script>
-    <hr />
+    );
+  </script>
+  <hr />
 
-    <!--deformGS HyperNeRF-->
-    <script>
-      cases = ["cut-lemon1", "torchocolate", "hand1-dense-v2"];
-      frames = {
-        torchocolate: [0, 20, 40, 60],
-        "hand1-dense-v2": [0, 16, 28, 40],
-        "cut-lemon1": [0, 20, 40, 56, 80, 100],
-      };
-      document.write(
-        `<section class="section">
+  <!--deformGS HyperNeRF-->
+  <script>
+    cases = ["cut-lemon1", "torchocolate", "hand1-dense-v2"];
+    frames = {
+      torchocolate: [0, 20, 40, 60],
+      "hand1-dense-v2": [0, 16, 28, 40],
+      "cut-lemon1": [0, 20, 40, 56, 80, 100],
+    };
+    document.write(
+      `<section class="section">
             <div class="container is-max-desktop">
                 <div class="columns is-centered has-text-centered">
                     <h2 class="title is-2">DeformGS + TimeFormer on HyperNeRF Dataset</h2>
@@ -748,82 +674,82 @@
                     <h2 class="title is-2"> <a href="index_deformGS_hypernerf.html" style="color:royalblue;">======> Click to See More Cases Here ======></a></h2>
                 </div>
 `
-      );
+    );
 
-      for (var c = 0; c < cases.length; c++) {
-        dataset = cases[c];
-        one_more_row = frames[dataset].length === 6;
-        class_width = get_class_width(frames[dataset].length);
+    for (var c = 0; c < cases.length; c++) {
+      dataset = cases[c];
+      one_more_row = frames[dataset].length === 6;
+      class_width = get_class_width(frames[dataset].length);
 
-        if (!one_more_row) {
-          row = '<div class="columns is-centered has-text-centered">';
-          for (var i = 0; i < frames[dataset].length; i++) {
-            row += `<div class="column ${class_width}">
+      if (!one_more_row) {
+        row = '<div class="columns is-centered has-text-centered">';
+        for (var i = 0; i < frames[dataset].length; i++) {
+          row += `<div class="column ${class_width}">
                     <img-comparison-slider hover="hover" value="50">
                           <figure slot="first" class="before">
                             <img src="compare_rgb/hypernerf/${dataset}_deformGS/${pad(
-              frames[dataset][i]
-            )}.png">
+            frames[dataset][i]
+          )}.png">
                             <figcaption>Before</figcaption>
                           </figure>
                           <figure slot="second" class="after">
                             <img src="compare_rgb/hypernerf/${dataset}_deformGS_ours/${pad(
-              frames[dataset][i]
-            )}.png">
+            frames[dataset][i]
+          )}.png">
                             <figcaption>After</figcaption>
                           </figure>
                         </img-comparison-slider>
                 </div>`;
-          }
-          row += "</div>";
-        } else {
-          row = '<div class="columns is-centered has-text-centered">';
-          for (var i = 0; i < frames[dataset].length / 2; i++) {
-            row += `<div class="column ${class_width}">
-                    <img-comparison-slider hover="hover" value="50">
-                          <figure slot="first" class="before">
-                            <img src="compare_rgb/hypernerf/${dataset}_deformGS/${pad(
-              frames[dataset][i]
-            )}.png">
-                            <figcaption>Before</figcaption>
-                          </figure>
-                          <figure slot="second" class="after">
-                            <img src="compare_rgb/hypernerf/${dataset}_deformGS_ours/${pad(
-              frames[dataset][i]
-            )}.png">
-                            <figcaption>After</figcaption>
-                          </figure>
-                        </img-comparison-slider>
-                </div>`;
-          }
-          row += "</div>";
-          row += '<div class="columns is-centered has-text-centered">';
-          for (
-            var i = frames[dataset].length / 2;
-            i < frames[dataset].length;
-            i++
-          ) {
-            row += `<div class="column ${class_width}">
-                    <img-comparison-slider hover="hover" value="50">
-                          <figure slot="first" class="before">
-                            <img src="compare_rgb/hypernerf/${dataset}_deformGS/${pad(
-              frames[dataset][i]
-            )}.png">
-                            <figcaption>Before</figcaption>
-                          </figure>
-                          <figure slot="second" class="after">
-                            <img src="compare_rgb/hypernerf/${dataset}_deformGS_ours/${pad(
-              frames[dataset][i]
-            )}.png">
-                            <figcaption>After</figcaption>
-                          </figure>
-                        </img-comparison-slider>
-                </div>`;
-          }
-          row += "</div>";
         }
+        row += "</div>";
+      } else {
+        row = '<div class="columns is-centered has-text-centered">';
+        for (var i = 0; i < frames[dataset].length / 2; i++) {
+          row += `<div class="column ${class_width}">
+                    <img-comparison-slider hover="hover" value="50">
+                          <figure slot="first" class="before">
+                            <img src="compare_rgb/hypernerf/${dataset}_deformGS/${pad(
+            frames[dataset][i]
+          )}.png">
+                            <figcaption>Before</figcaption>
+                          </figure>
+                          <figure slot="second" class="after">
+                            <img src="compare_rgb/hypernerf/${dataset}_deformGS_ours/${pad(
+            frames[dataset][i]
+          )}.png">
+                            <figcaption>After</figcaption>
+                          </figure>
+                        </img-comparison-slider>
+                </div>`;
+        }
+        row += "</div>";
+        row += '<div class="columns is-centered has-text-centered">';
+        for (
+          var i = frames[dataset].length / 2;
+          i < frames[dataset].length;
+          i++
+        ) {
+          row += `<div class="column ${class_width}">
+                    <img-comparison-slider hover="hover" value="50">
+                          <figure slot="first" class="before">
+                            <img src="compare_rgb/hypernerf/${dataset}_deformGS/${pad(
+            frames[dataset][i]
+          )}.png">
+                            <figcaption>Before</figcaption>
+                          </figure>
+                          <figure slot="second" class="after">
+                            <img src="compare_rgb/hypernerf/${dataset}_deformGS_ours/${pad(
+            frames[dataset][i]
+          )}.png">
+                            <figcaption>After</figcaption>
+                          </figure>
+                        </img-comparison-slider>
+                </div>`;
+        }
+        row += "</div>";
+      }
 
-        document.write(`
+      document.write(`
 
 
 
@@ -836,30 +762,30 @@
         
         <br>
         `);
-      }
+    }
 
-      document.write(
-        `    </div>
+    document.write(
+      `    </div>
 </section>`
-      );
-    </script>
+    );
+  </script>
 
-    <hr />
+  <hr />
 
-    <!--deformGS NeRF-DS-->
-    <script>
-      cases = ["bell", "cup", "sieve", "plate", "press"];
+  <!--deformGS NeRF-DS-->
+  <script>
+    cases = ["bell", "cup", "sieve", "plate", "press"];
 
-      frames = {
-        bell: [10, 50],
-        plate: [1, 10],
-        cup: [15, 37],
-        sieve: [0, 94],
-        press: [26, 84],
-      };
+    frames = {
+      bell: [10, 50],
+      plate: [1, 10],
+      cup: [15, 37],
+      sieve: [0, 94],
+      press: [26, 84],
+    };
 
-      document.write(
-        `<section class="section">
+    document.write(
+      `<section class="section">
             <div class="container is-max-desktop">
                 <div class="columns is-centered has-text-centered">
                     <h2 class="title is-2">DeformGS + TimeFormer on NeRF-DS Dataset</h2>
@@ -868,11 +794,11 @@
                     <h2 class="title is-2"> <a href="index_deformGS_nerfds.html" style="color:royalblue;">======> Click to See More Cases Here ======></a></h2>
                 </div>
 `
-      );
+    );
 
-      for (var c = 0; c < cases.length; c++) {
-        dataset = cases[c];
-        document.write(`
+    for (var c = 0; c < cases.length; c++) {
+      dataset = cases[c];
+      document.write(`
 
 
 
@@ -883,14 +809,14 @@
                     <img-comparison-slider hover="hover" value="50">
                           <figure slot="first" class="before">
                             <img src="compare_rgb/nerfds/${dataset}_novel_view_deformGS/${pad(
-          frames[dataset][0]
-        )}.png" width="500">
+        frames[dataset][0]
+      )}.png" width="500">
                             <figcaption>Before</figcaption>
                           </figure>
                           <figure slot="second" class="after">
                             <img src="compare_rgb/nerfds/${dataset}_novel_view_deformGS_ours/${pad(
-          frames[dataset][0]
-        )}.png" width="500">
+        frames[dataset][0]
+      )}.png" width="500">
                             <figcaption>After</figcaption>
                           </figure>
                         </img-comparison-slider>
@@ -900,14 +826,14 @@
                     <img-comparison-slider hover="hover" value="50">
                           <figure slot="first" class="before">
                             <img src="compare_rgb/nerfds/${dataset}_novel_view_deformGS/${pad(
-          frames[dataset][1]
-        )}.png" width="500">
+        frames[dataset][1]
+      )}.png" width="500">
                             <figcaption>Before</figcaption>
                           </figure>
                           <figure slot="second" class="after">
                             <img src="compare_rgb/nerfds/${dataset}_novel_view_deformGS_ours/${pad(
-          frames[dataset][1]
-        )}.png" width="500">
+        frames[dataset][1]
+      )}.png" width="500">
                             <figcaption>After</figcaption>
                           </figure>
                         </img-comparison-slider>
@@ -922,212 +848,210 @@
         
         <br>
         `);
-      }
+    }
 
-      document.write(
-        `    </div>
+    document.write(
+      `    </div>
 </section>`
-      );
-    </script>
-    <script
-      async
-      src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"
-    ></script>
+    );
+  </script>
+  <script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
 
-    <script type="importmap">
+  <script type="importmap">
       {
         "imports": {
           "three": "./three_js/three.module.js"
         }
       }
     </script>
-    <script type="module">
-      import * as THREE from "three";
+  <script type="module">
+    import * as THREE from "three";
 
-      import { PLYLoader } from "./three_js/PLYLoader.js";
-      import { OrbitControls } from "./three_js/OrbitControls.js";
+    import { PLYLoader } from "./three_js/PLYLoader.js";
+    import { OrbitControls } from "./three_js/OrbitControls.js";
 
-      let div_to_scene = {};
+    let div_to_scene = {};
 
-      let items = ["001", "002", "003", "004", "005", "006", "007", "008"];
+    let items = ["001", "002", "003", "004", "005", "006", "007", "008"];
 
-      for (let item of items) {
-        let key = `images_${item}`;
-        div_to_scene[key] = { geo: null, color: null };
-        key = `pc_ours_${item}`;
-        div_to_scene[key] = { geo: null, color: null };
-        key = `pc_${item}`;
-        div_to_scene[key] = { geo: null, color: null };
-      }
+    for (let item of items) {
+      let key = `images_${item}`;
+      div_to_scene[key] = { geo: null, color: null };
+      key = `pc_ours_${item}`;
+      div_to_scene[key] = { geo: null, color: null };
+      key = `pc_${item}`;
+      div_to_scene[key] = { geo: null, color: null };
+    }
 
-      let mouse_button_down = false;
-      let list_of_orbit_controls = [];
-      let style_camera = null;
-      let render_colors = true;
-      let style_id = "0";
+    let mouse_button_down = false;
+    let list_of_orbit_controls = [];
+    let style_camera = null;
+    let render_colors = true;
+    let style_id = "0";
 
-      function setup_camera(div_name) {
-        console.log(div_name);
-        let container = document.getElementById(div_name);
+    function setup_camera(div_name) {
+      console.log(div_name);
+      let container = document.getElementById(div_name);
+      let width = container.parentElement.clientWidth;
+      let height = container.parentElement.clientHeight;
+      let camera = new THREE.PerspectiveCamera(55, width / height, 0.1, 50);
+
+      // let camera_init_position = new THREE.Vector3( 2.25, 1.525, -3.75 );
+      let camera_init_position = new THREE.Vector3(0, 0, 3);
+      camera_init_position = camera_init_position.multiplyScalar(0.55);
+      camera.position.set(
+        camera_init_position.x,
+        camera_init_position.y,
+        camera_init_position.z
+      );
+      return camera;
+    }
+
+    function setup_render_divs_pc(div_name, mesh_path) {
+      let camera = setup_camera(div_name);
+      let orbit_control = create_point_cloud_div(camera, div_name, mesh_path);
+      list_of_orbit_controls.push(orbit_control);
+    }
+
+    function create_point_cloud_div(camera, div_id, point_cloud_path) {
+      let container;
+      let renderer, controls;
+
+      init();
+      animate();
+
+      function init() {
+        container = document.getElementById(div_id);
         let width = container.parentElement.clientWidth;
         let height = container.parentElement.clientHeight;
-        let camera = new THREE.PerspectiveCamera(55, width / height, 0.1, 50);
 
-        // let camera_init_position = new THREE.Vector3( 2.25, 1.525, -3.75 );
-        let camera_init_position = new THREE.Vector3(0, 0, 3);
-        camera_init_position = camera_init_position.multiplyScalar(0.55);
-        camera.position.set(
-          camera_init_position.x,
-          camera_init_position.y,
-          camera_init_position.z
+        div_to_scene[div_id]["color"] = new THREE.Scene();
+        div_to_scene[div_id]["geo"] = new THREE.Scene();
+        div_to_scene[div_id]["color"].background = new THREE.Color(0xffffff);
+        div_to_scene[div_id]["geo"].background = new THREE.Color(0xffffff);
+
+        // PLY file
+        const loader = new PLYLoader();
+        loader.load(
+          point_cloud_path,
+          function (geometry) {
+            // 创建点云材质
+            const material = new THREE.PointsMaterial({
+              color: 0x555555,
+              size: 0.0001,
+            });
+
+            const points = new THREE.Points(geometry, material);
+
+            const pointCount =
+              geometry.attributes.position.count.toLocaleString();
+            var caption = div_id.includes("ours")
+              ? "+TimeFormer    "
+              : "DeformGS  ";
+            caption += `Points: ${pointCount}`;
+
+            document.getElementById("caption_" + div_id).textContent =
+              caption;
+
+            points.rotation.x = Math.PI; // 旋转180度
+
+            div_to_scene[div_id]["color"].add(points);
+          },
+          (xhr) => {
+            console.log((xhr.loaded / xhr.total) * 100 + "% loaded");
+          },
+          (error) => {
+            console.log("load fail");
+            console.log(error);
+          }
         );
-        return camera;
+
+        // Renderer
+        renderer = new THREE.WebGLRenderer({ antialias: true });
+        renderer.setPixelRatio(window.devicePixelRatio);
+        renderer.setSize(width, height);
+        renderer.outputEncoding = THREE.sRGBEncoding;
+
+        renderer.shadowMap.enabled = true;
+
+        container.appendChild(renderer.domElement);
+
+        controls = new OrbitControls(camera, renderer.domElement);
+        controls.enableDamping = false;
+
+        // Resize
+        window.addEventListener("resize", onWindowResize);
       }
 
-      function setup_render_divs_pc(div_name, mesh_path) {
-        let camera = setup_camera(div_name);
-        let orbit_control = create_point_cloud_div(camera, div_name, mesh_path);
-        list_of_orbit_controls.push(orbit_control);
+      function onWindowResize() {
+        let width = container.clientWidth;
+        let height = container.clientHeight;
+        camera.aspect = width / height;
+        camera.updateProjectionMatrix();
+        renderer.setSize(width, height);
+      }
+      function animate() {
+        requestAnimationFrame(animate);
+        render();
       }
 
-      function create_point_cloud_div(camera, div_id, point_cloud_path) {
-        let container;
-        let renderer, controls;
-
-        init();
-        animate();
-
-        function init() {
-          container = document.getElementById(div_id);
-          let width = container.parentElement.clientWidth;
-          let height = container.parentElement.clientHeight;
-
-          div_to_scene[div_id]["color"] = new THREE.Scene();
-          div_to_scene[div_id]["geo"] = new THREE.Scene();
-          div_to_scene[div_id]["color"].background = new THREE.Color(0xffffff);
-          div_to_scene[div_id]["geo"].background = new THREE.Color(0xffffff);
-
-          // PLY file
-          const loader = new PLYLoader();
-          loader.load(
-            point_cloud_path,
-            function (geometry) {
-              // 创建点云材质
-              const material = new THREE.PointsMaterial({
-                color: 0x555555,
-                size: 0.0001,
-              });
-
-              const points = new THREE.Points(geometry, material);
-
-              const pointCount =
-                geometry.attributes.position.count.toLocaleString();
-              var caption = div_id.includes("ours")
-                ? "+TimeFormer    "
-                : "DeformGS  ";
-              caption += `Points: ${pointCount}`;
-
-              document.getElementById("caption_" + div_id).textContent =
-                caption;
-
-              points.rotation.x = Math.PI; // 旋转180度
-
-              div_to_scene[div_id]["color"].add(points);
-            },
-            (xhr) => {
-              console.log((xhr.loaded / xhr.total) * 100 + "% loaded");
-            },
-            (error) => {
-              console.log("load fail");
-              console.log(error);
-            }
-          );
-
-          // Renderer
-          renderer = new THREE.WebGLRenderer({ antialias: true });
-          renderer.setPixelRatio(window.devicePixelRatio);
-          renderer.setSize(width, height);
-          renderer.outputEncoding = THREE.sRGBEncoding;
-
-          renderer.shadowMap.enabled = true;
-
-          container.appendChild(renderer.domElement);
-
-          controls = new OrbitControls(camera, renderer.domElement);
-          controls.enableDamping = false;
-
-          // Resize
-          window.addEventListener("resize", onWindowResize);
-        }
-
-        function onWindowResize() {
-          let width = container.clientWidth;
-          let height = container.clientHeight;
-          camera.aspect = width / height;
-          camera.updateProjectionMatrix();
-          renderer.setSize(width, height);
-        }
-        function animate() {
-          requestAnimationFrame(animate);
-          render();
-        }
-
-        function render() {
-          renderer.render(
-            div_to_scene[div_id][render_colors ? "color" : "geo"],
-            camera
-          );
-          controls.update();
-        }
-
-        return controls;
+      function render() {
+        renderer.render(
+          div_to_scene[div_id][render_colors ? "color" : "geo"],
+          camera
+        );
+        controls.update();
       }
 
-      document.addEventListener("keydown", logKey);
+      return controls;
+    }
 
-      function logKey(evt) {
-        if (evt.keyCode === 71 && !mouse_button_down) {
-          switch_geometry();
-        }
-        if (evt.keyCode === 82 && !mouse_button_down) {
-          list_of_orbit_controls.forEach((oc) => {
-            console.log(oc.object.position);
-          });
-          reset_orbit_controls();
-        }
+    document.addEventListener("keydown", logKey);
+
+    function logKey(evt) {
+      if (evt.keyCode === 71 && !mouse_button_down) {
+        switch_geometry();
       }
-
-      function switch_geometry() {
-        render_colors = !render_colors;
-      }
-
-      function reset_orbit_controls() {
+      if (evt.keyCode === 82 && !mouse_button_down) {
         list_of_orbit_controls.forEach((oc) => {
-          oc.reset();
+          console.log(oc.object.position);
         });
+        reset_orbit_controls();
       }
+    }
 
-      document.body.onmousedown = function (evt) {
-        if (evt.button === 0) mouse_button_down = true;
-      };
-      document.body.onmouseup = function (evt) {
-        if (evt.button === 0) mouse_button_down = false;
-      };
+    function switch_geometry() {
+      render_colors = !render_colors;
+    }
 
-      window.onload = function () {
-        let slider = document.getElementsByClassName("slider")[0];
-        slider.removeAttribute("tabIndex");
+    function reset_orbit_controls() {
+      list_of_orbit_controls.forEach((oc) => {
+        oc.reset();
+      });
+    }
 
-        setup_render_divs_pc("pc_002", "models/ply/lemon_ori.ply");
-        setup_render_divs_pc("pc_003", "models/ply/torch_ori.ply");
-        setup_render_divs_pc("pc_008", "models/ply/plate_ori.ply");
-        setup_render_divs_pc("pc_005", "models/ply/cup_ori.ply");
+    document.body.onmousedown = function (evt) {
+      if (evt.button === 0) mouse_button_down = true;
+    };
+    document.body.onmouseup = function (evt) {
+      if (evt.button === 0) mouse_button_down = false;
+    };
 
-        setup_render_divs_pc("pc_ours_002", "models/ply/lemon_ours.ply");
-        setup_render_divs_pc("pc_ours_003", "models/ply/torch_ours.ply");
-        setup_render_divs_pc("pc_ours_008", "models/ply/plate_ours.ply");
-        setup_render_divs_pc("pc_ours_005", "models/ply/cup_ours.ply");
-      };
-    </script>
-  </body>
+    window.onload = function () {
+      let slider = document.getElementsByClassName("slider")[0];
+      slider.removeAttribute("tabIndex");
+
+      setup_render_divs_pc("pc_002", "models/ply/lemon_ori.ply");
+      setup_render_divs_pc("pc_003", "models/ply/torch_ori.ply");
+      setup_render_divs_pc("pc_008", "models/ply/plate_ori.ply");
+      setup_render_divs_pc("pc_005", "models/ply/cup_ori.ply");
+
+      setup_render_divs_pc("pc_ours_002", "models/ply/lemon_ours.ply");
+      setup_render_divs_pc("pc_ours_003", "models/ply/torch_ours.ply");
+      setup_render_divs_pc("pc_ours_008", "models/ply/plate_ours.ply");
+      setup_render_divs_pc("pc_ours_005", "models/ply/cup_ours.ply");
+    };
+  </script>
+</body>
+
 </html>
